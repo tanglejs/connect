@@ -1,0 +1,9 @@
+{
+  "plugin": {
+    "name": "environment",
+    "version": "0.0.0",
+    "description": "Get and set a project's active environment",
+    "subcommand": "environment",
+    "type": "runner"
+  }
+}
