@@ -11,7 +11,6 @@ AppServer = require path.join(__dirname, 'app_server')
 module.exports = (params, shell) ->
   (config) ->
     logger = shell.settings.logger
-
     deferred = Q.defer()
 
     switch params.name
@@ -29,7 +28,7 @@ module.exports = (params, shell) ->
       server = connectApp
         .listen(port)
         .on 'listening', ->
-          logger.log 'info', "#{params.name} server started on #{port}"
+          logger.info "#{params.name} server started on #{port}"
           shell.settings.servers ?= {}
           shell.settings.servers[params.name] = new AppServer
             name: params.name
