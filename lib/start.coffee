@@ -33,13 +33,16 @@ module.exports = (params, shell) ->
       server = connectApp
         .listen(port)
         .on 'listening', ->
-          logger.info "#{params.name} server started on #{port}"
           shell.settings.servers ?= {}
           shell.settings.servers[params.name] = new AppServer
             name: params.name
             server: @
             port: port
-          deferred.resolve(@)
+          deferred.resolve
+            server_name: params.name
+            port: port
+            status: 'listening'
+
 
     shell.once 'quit', ->
       _.each shell.settings.servers, (server) ->
