@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Logan Koester <logan@logankoester.com> (http://logankoester.com/)",
-  "license": "MIT",
   "dependencies": {
     "connect": "^2.21.1",
     "connect-livereload": "^0.4.0",
@@ -15,5 +14,11 @@
     "portscanner": "^1.0.0",
     "q": "^1.0.1",
     "serve-static": "^1.2.3"
-  }
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tanglejs/tangle/blob/master/LICENSE-MIT"
+    }
+  ]
 }
