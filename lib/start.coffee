@@ -2,6 +2,7 @@ path = require 'path'
 Q = require 'q'
 connect = require 'connect'
 serveStatic = require 'serve-static'
+serveIndex = require 'serve-index'
 _ = require 'lodash'
 portscanner = require 'portscanner'
 livereload = require 'connect-livereload'
@@ -24,6 +25,10 @@ module.exports = (params, shell) ->
       connectApp = connect()
       connectApp.use livereload port: 35729
       connectApp.use serveStatic(dir)
+      connectApp.use serveIndex dir,
+        hidden: true
+        icons: true
+        view: 'details'
 
       server = connectApp
         .listen(port)
