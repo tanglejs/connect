@@ -11,6 +11,7 @@ AppServer = require path.join(__dirname, 'app_server')
 
 module.exports = (params, shell) ->
   (config) ->
+
     logger = shell.settings.logger
     deferred = Q.defer()
 
@@ -23,7 +24,11 @@ module.exports = (params, shell) ->
       throw new Error error if error
 
       connectApp = connect()
-      connectApp.use livereload port: 35729
+
+      if lr = shell.settings.servers?['livereload']
+        logger.info "Using livereload server on port #{lr.port}."
+        connectApp.use livereload port: lr.port
+
       connectApp.use serveStatic(dir)
       connectApp.use serveIndex dir,
         hidden: true
