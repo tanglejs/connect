@@ -2,3 +2,7 @@ node_modules/
 *.swp
 *.swo
 *.swn
+test/fixtures/tmp/log/
+test/fixtures/tmp/pid/
+test/fixtures/tmp/socket/
+npm-debug.log

@@ -4,7 +4,7 @@
   "description": "Listen for http requests in your tangle build directory",
   "main": "index.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Logan Koester <logan@logankoester.com> (http://logankoester.com/)",
   "dependencies": {
@@ -17,12 +17,18 @@
     "q": "^1.0.1",
     "serve-index": "^1.1.4",
     "serve-static": "^1.4.0",
-    "tiny-lr": "0.0.9"
+    "tiny-lr": "0.0.9",
+    "outbreak": "^0.3.0"
   },
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/tanglejs/tangle/blob/master/LICENSE-MIT"
     }
-  ]
+  ],
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-fs": "^0.1.0",
+    "mocha": "^2.0.1"
+  }
 }
