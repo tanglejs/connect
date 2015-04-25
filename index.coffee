@@ -2,12 +2,12 @@ path = require 'path'
 
 start = require path.join(__dirname, 'lib', 'start')
 stop = require path.join(__dirname, 'lib', 'stop')
-running = require path.join(__dirname, 'lib', 'running')
+#running = require path.join(__dirname, 'lib', 'running')
 
 module.exports =
   start: start
   stop: stop
-  running: running
+  #running: running
 
   commands:
     'start app':
